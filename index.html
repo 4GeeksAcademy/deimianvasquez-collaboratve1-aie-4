@@ -6,6 +6,7 @@
   <meta name="description" content="Maison Élégance — Tienda online de ropa francesa de alta gama. Descubre nuestra colección moderna y atemporal." />
   <title>Maison Élégance — Moda Francesa</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body class="bg-stone-50 text-stone-800 antialiased">
 
@@ -13,56 +14,68 @@
   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm border-b border-stone-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <!-- Top row: Logo + Search + Account -->
-      <div class="flex items-center justify-between py-3 gap-4">
+      <!-- Single row: Logo | Nav | Search (dropdown) | Account + Cart -->
+      <div class="flex items-center justify-between py-3 gap-2 sm:gap-4">
 
         <!-- Logo -->
-        <a href="#" class="text-2xl font-serif tracking-wide text-stone-900 shrink-0">
+        <a href="#" class="text-xl sm:text-2xl font-serif tracking-wide text-stone-900 shrink-0">
           Maison<span class="text-stone-500">Élégance</span>
         </a>
 
-        <!-- Search bar (hidden on mobile, shown on md+) -->
-        <div class="hidden md:flex flex-1 max-w-md mx-4">
-          <div class="relative w-full">
-            <input type="search" placeholder="Buscar…"
-                   class="w-full pl-4 pr-10 py-2 rounded-full border border-stone-300 bg-stone-50 text-sm
-                          focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent
-                          placeholder:text-stone-400" />
-            <span class="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 text-lg leading-none">⌕</span>
+        <!-- ===== NAV (desktop) ===== -->
+        <nav class="hidden lg:flex items-center gap-5 xl:gap-6 text-sm font-medium uppercase tracking-wider text-stone-600">
+          <a href="#" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Novedades</a>
+          <a href="#" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Mujer</a>
+          <a href="#" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Hombre</a>
+          <a href="#" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Accesorios</a>
+          <a href="#" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Colección</a>
+          <a href="#" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Rebajas</a>
+        </nav>
+
+        <!-- Right side: Search dropdown + Account + Cart -->
+        <div class="flex items-center gap-2 sm:gap-3">
+
+          <!-- Search dropdown -->
+          <div class="relative group">
+            <!-- Search icon (always visible) -->
+            <button class="flex items-center justify-center w-9 h-9 rounded-full text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition">
+              <i class="fas fa-search text-sm"></i>
+            </button>
+            <!-- Dropdown input (appears on hover / focus-within) -->
+            <div class="absolute right-0 top-full mt-2 w-64 bg-white rounded-xl shadow-lg border border-stone-200 p-2
+                        opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                        focus-within:opacity-100 focus-within:visible transition-all duration-200">
+              <input type="search" placeholder="Buscar…"
+                     class="w-full px-4 py-2 rounded-lg border border-stone-300 bg-stone-50 text-sm
+                            focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent
+                            placeholder:text-stone-400" />
+            </div>
           </div>
-        </div>
 
-        <!-- Account & Cart -->
-        <div class="flex items-center gap-3 sm:gap-5 text-sm">
-          <a href="#" class="hidden sm:inline-flex items-center gap-1 text-stone-600 hover:text-stone-900 transition">
-            <span class="text-lg">👤</span>
-            <span class="hidden lg:inline">Cuenta</span>
+          <!-- Account -->
+          <a href="#" class="hidden sm:inline-flex items-center justify-center w-9 h-9 rounded-full text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition">
+            <i class="far fa-user text-sm"></i>
           </a>
-          <a href="#" class="relative inline-flex items-center gap-1 text-stone-600 hover:text-stone-900 transition">
-            <span class="text-lg">🛍</span>
-            <span class="hidden lg:inline">Carrito</span>
-            <span class="absolute -top-2 -right-2 bg-stone-800 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+
+          <!-- Cart -->
+          <a href="#" class="relative inline-flex items-center justify-center w-9 h-9 rounded-full text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition">
+            <i class="fas fa-shopping-bag text-sm"></i>
+            <span class="absolute -top-0.5 -right-0.5 bg-stone-800 text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">0</span>
           </a>
         </div>
+
       </div>
 
-      <!-- Mobile search (visible only on small screens) -->
-      <div class="md:hidden pb-3">
-        <input type="search" placeholder="Buscar…"
-               class="w-full pl-4 pr-4 py-2 rounded-full border border-stone-300 bg-stone-50 text-sm
-                      focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent
-                      placeholder:text-stone-400" />
-      </div>
-
-      <!-- ===== NAV ===== -->
-      <nav class="hidden md:flex items-center justify-center gap-8 pb-3 text-sm font-medium uppercase tracking-wider text-stone-600">
-        <a href="#" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Novedades</a>
-        <a href="#" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Mujer</a>
-        <a href="#" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Hombre</a>
-        <a href="#" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Accesorios</a>
-        <a href="#" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Colección</a>
-        <a href="#" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Rebajas</a>
+      <!-- ===== NAV (mobile) ===== -->
+      <nav class="flex lg:hidden items-center gap-4 pb-3 text-xs font-medium uppercase tracking-wider text-stone-600 overflow-x-auto">
+        <a href="#" class="hover:text-stone-900 transition whitespace-nowrap">Novedades</a>
+        <a href="#" class="hover:text-stone-900 transition whitespace-nowrap">Mujer</a>
+        <a href="#" class="hover:text-stone-900 transition whitespace-nowrap">Hombre</a>
+        <a href="#" class="hover:text-stone-900 transition whitespace-nowrap">Accesorios</a>
+        <a href="#" class="hover:text-stone-900 transition whitespace-nowrap">Colección</a>
+        <a href="#" class="hover:text-stone-900 transition whitespace-nowrap">Rebajas</a>
       </nav>
+
     </div>
   </header>
 
@@ -258,7 +271,7 @@
           <!-- Product 3 -->
           <article class="group bg-stone-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
             <div class="aspect-[3/4] overflow-hidden">
-              <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1608236415050-1f7460c8a26b?q=80&w=880&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-500"></div>
+              <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=1099&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-500"></div>
             </div>
             <div class="p-4">
               <p class="text-xs text-stone-400 uppercase tracking-wider">Accesorios</p>
@@ -319,44 +332,59 @@
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
 
-        <!-- Brand -->
-        <div class="col-span-2 md:col-span-1">
-          <a href="#" class="text-xl font-serif text-white tracking-wide">
-            Maison<span class="text-stone-500">Élégance</span>
-          </a>
-          <p class="text-sm mt-3 leading-relaxed text-stone-500">
-            Moda francesa desde 1987. La elegancia es nuestra firma.
-          </p>
-        </div>
-
-        <!-- Links -->
+        <!-- Categorías -->
         <div>
-          <h4 class="text-white text-sm font-medium uppercase tracking-wider mb-4">Tienda</h4>
+          <h4 class="text-white text-sm font-medium uppercase tracking-wider mb-4">Categorías</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="#" class="hover:text-white transition">Mujer</a></li>
-            <li><a href="#" class="hover:text-white transition">Hombre</a></li>
+            <li><a href="#" class="hover:text-white transition">Calzado</a></li>
+            <li><a href="#" class="hover:text-white transition">Camisas</a></li>
+            <li><a href="#" class="hover:text-white transition">Pantalones</a></li>
             <li><a href="#" class="hover:text-white transition">Accesorios</a></li>
-            <li><a href="#" class="hover:text-white transition">Rebajas</a></li>
           </ul>
         </div>
 
+        <!-- Legal -->
         <div>
-          <h4 class="text-white text-sm font-medium uppercase tracking-wider mb-4">Servicio</h4>
+          <h4 class="text-white text-sm font-medium uppercase tracking-wider mb-4">Legal</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="#" class="hover:text-white transition">Envío</a></li>
-            <li><a href="#" class="hover:text-white transition">Devoluciones</a></li>
-            <li><a href="#" class="hover:text-white transition">FAQ</a></li>
-            <li><a href="#" class="hover:text-white transition">Contacto</a></li>
+            <li><a href="#" class="hover:text-white transition">Términos y condiciones</a></li>
+            <li><a href="#" class="hover:text-white transition">Política de privacidad</a></li>
+            <li><a href="#" class="hover:text-white transition">Sobre la marca</a></li>
           </ul>
         </div>
 
+        <!-- Contacto -->
         <div>
-          <h4 class="text-white text-sm font-medium uppercase tracking-wider mb-4">Acerca de</h4>
+          <h4 class="text-white text-sm font-medium uppercase tracking-wider mb-4">Contacto</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="#" class="hover:text-white transition">Nuestra historia</a></li>
-            <li><a href="#" class="hover:text-white transition">Tiendas</a></li>
-            <li><a href="#" class="hover:text-white transition">Carreras</a></li>
-            <li><a href="#" class="hover:text-white transition">Aviso legal</a></li>
+            <li><a href="#" class="hover:text-white transition">Email</a></li>
+            <li><a href="#" class="hover:text-white transition">Teléfono</a></li>
+            <li><a href="#" class="hover:text-white transition">Dirección</a></li>
+          </ul>
+        </div>
+
+        <!-- Redes sociales -->
+        <div>
+          <h4 class="text-white text-sm font-medium uppercase tracking-wider mb-4">Redes sociales</h4>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <a href="#" class="inline-flex items-center gap-3 hover:text-white transition">
+                <i class="fab fa-instagram text-lg w-5 text-center"></i>
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="#" class="inline-flex items-center gap-3 hover:text-white transition">
+                <i class="fab fa-facebook-f text-lg w-5 text-center"></i>
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="#" class="inline-flex items-center gap-3 hover:text-white transition">
+                <i class="fab fa-x-twitter text-lg w-5 text-center"></i>
+                X
+              </a>
+            </li>
           </ul>
         </div>
 
