@@ -1,66 +1,121 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Catálogo - Maison Élégance</title>
-    <!-- Tailwind CSS v4 CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  </head>
-  <body class="bg-gray-50 text-gray-800 font-sans">
-    <!-- HEADER -->
-    <header class="bg-white shadow-sm">
-      <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <h1 class="text-2xl font-bold text-gray-800 tracking-wide">Maison <span class="text-indigo-600">Élégance</span></h1>
-        <nav class="hidden md:flex space-x-6 text-sm font-medium">
-          <a href="#" class="text-gray-600 hover:text-indigo-600">Mujer</a>
-          <a href="#" class="text-gray-600 hover:text-indigo-600">Hombre</a>
-          <a href="#" class="text-gray-600 hover:text-indigo-600">Accesorios</a>
-          <a href="#" class="text-gray-600 hover:text-indigo-600">Rebajas</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo | Maison Élégance</title>
+  <meta name="description" content="Explora el catálogo completo de Maison Élégance: mujer, hombre y accesorios con filtros por categoría, talla y precio." />
+  <meta name="keywords" content="catálogo moda, ropa francesa, mujer, hombre, accesorios, tienda online" />
+  <meta name="author" content="Maison Élégance" />
+  <meta property="og:title" content="Catálogo | Maison Élégance" />
+  <meta property="og:description" content="Descubre piezas atemporales de Maison Élégance con una experiencia de compra responsive y refinada." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Maison Élégance",
+        "url": "https://maisonelegance.com",
+        "logo": "https://maisonelegance.com/logo.png",
+        "description": "Tienda online de moda francesa con colecciones para mujer, hombre y accesorios."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://maisonelegance.com/index.html"},
+          {"@type": "ListItem", "position": 2, "name": "Catálogo", "item": "https://maisonelegance.com/catalogo.html"}
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "Catálogo Maison Élégance",
+        "numberOfItems": 8,
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Vestido Floral"},
+          {"@type": "ListItem", "position": 2, "name": "Blusa Clásica"},
+          {"@type": "ListItem", "position": 3, "name": "Camisa Oxford"},
+          {"@type": "ListItem", "position": 4, "name": "Traje Ejecutivo"},
+          {"@type": "ListItem", "position": 5, "name": "Bolso Tote"},
+          {"@type": "ListItem", "position": 6, "name": "Reloj Clásico"},
+          {"@type": "ListItem", "position": 7, "name": "Gafas de Sol"},
+          {"@type": "ListItem", "position": 8, "name": "Pashmina Seda"}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between py-3 gap-2 sm:gap-4">
+        <a href="index.html" class="text-xl sm:text-2xl font-serif tracking-wide text-stone-900 shrink-0" aria-label="Ir al inicio Maison Élégance">
+          Maison<span class="text-stone-500">Élégance</span>
+        </a>
+
+        <nav aria-label="Navegación principal" class="hidden lg:flex items-center gap-5 xl:gap-6 text-sm font-medium uppercase tracking-wider text-stone-600">
+          <a href="index.html" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Inicio</a>
+          <a href="catalogo.html" aria-current="page" class="text-stone-900 border-b-2 border-stone-900 pb-1">Catálogo</a>
+          <a href="cart.html" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Carrito</a>
         </nav>
-        <div class="flex items-center space-x-4 text-gray-600">
-          <span class="cursor-pointer hover:text-indigo-600">🔍</span>
-          <span class="cursor-pointer hover:text-indigo-600">👤</span>
-          <span class="cursor-pointer hover:text-indigo-600">🛒</span>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+          <form class="relative group" role="search" aria-label="Buscar en catálogo">
+            <label for="search-catalog" class="sr-only">Buscar productos</label>
+            <button type="button" class="flex items-center justify-center w-9 h-9 rounded-full text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition" aria-hidden="true" tabindex="-1">
+              <i class="fas fa-search text-sm"></i>
+            </button>
+            <div class="absolute right-0 top-full mt-2 w-64 bg-white rounded-xl shadow-lg border border-stone-200 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible focus-within:opacity-100 focus-within:visible transition-all duration-200">
+              <input id="search-catalog" type="search" placeholder="Buscar..." class="w-full px-4 py-2 rounded-lg border border-stone-300 bg-stone-50 text-sm focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent placeholder:text-stone-400" />
+            </div>
+          </form>
+          <a href="cart.html" class="relative inline-flex items-center justify-center w-9 h-9 rounded-full text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition" aria-label="Ir al carrito">
+            <i class="fas fa-shopping-bag text-sm"></i>
+            <span class="absolute -top-0.5 -right-0.5 bg-stone-800 text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">2</span>
+          </a>
         </div>
       </div>
-    </header>
 
-    <!-- HERO -->
-    <section class="relative bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center py-20 px-4">
-      <div class="relative z-10">
-        <h2 class="text-4xl md:text-5xl font-bold mb-3 tracking-wide">Nouvelle Collection</h2>
-        <p class="text-lg text-gray-300 max-w-xl mx-auto mb-6">
-          Descubre nuestra nueva colección de moda francesa. Elegancia y estilo para cada ocasión.
-        </p>
-        <a href="#" class="inline-block bg-white text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition">
-          Explorar colección
-        </a>
+      <nav aria-label="Navegación móvil" class="flex lg:hidden items-center gap-4 pb-3 text-xs font-medium uppercase tracking-wider text-stone-600 overflow-x-auto">
+        <a href="index.html" class="hover:text-stone-900 transition whitespace-nowrap">Inicio</a>
+        <a href="catalogo.html" class="text-stone-900 transition whitespace-nowrap">Catálogo</a>
+        <a href="cart.html" class="hover:text-stone-900 transition whitespace-nowrap">Carrito</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative bg-stone-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-stone-900/85 via-stone-900/70 to-stone-900/45"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+        <p class="text-stone-300 uppercase tracking-[0.2em] text-xs sm:text-sm mb-3">Maison Élégance</p>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif leading-tight">Catálogo de Temporada</h1>
+        <p class="mt-4 max-w-2xl text-stone-200 text-sm sm:text-base">Filtra por categoría, talla y precio para descubrir piezas premium alineadas con tu estilo.</p>
       </div>
     </section>
 
-    <!-- CATÁLOGO UNIFICADO -->
-    <section class="max-w-7xl mx-auto px-4 py-12">
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-2xl font-bold text-gray-800">🛍️ Catálogo</h2>
-      </div>
-
-      <!-- BARRA DE FILTROS -->
-      <div class="flex flex-wrap gap-4 mb-8 p-4 bg-white rounded-xl shadow-sm border border-gray-200">
-        <!-- Filtro por categoría -->
-        <div class="flex-1 min-w-[200px]">
-          <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Categoría</label>
-          <select class="w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 cursor-pointer">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12" aria-labelledby="filtros-title">
+      <h2 id="filtros-title" class="text-xl sm:text-2xl font-serif mb-6">Filtros</h2>
+      <form class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 bg-white rounded-2xl border border-stone-200 p-4 sm:p-6 shadow-sm" aria-label="Filtrar productos">
+        <div>
+          <label for="categoria" class="block text-xs font-semibold uppercase tracking-wider text-stone-500 mb-2">Categoría</label>
+          <select id="categoria" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-stone-50 text-sm focus:outline-none focus:ring-2 focus:ring-stone-400">
             <option>Todas</option>
             <option>Mujer</option>
             <option>Hombre</option>
             <option>Accesorios</option>
           </select>
         </div>
-        <!-- Filtro por talla -->
-        <div class="flex-1 min-w-[200px]">
-          <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Talla</label>
-          <select class="w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 cursor-pointer">
+        <div>
+          <label for="talla" class="block text-xs font-semibold uppercase tracking-wider text-stone-500 mb-2">Talla</label>
+          <select id="talla" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-stone-50 text-sm focus:outline-none focus:ring-2 focus:ring-stone-400">
             <option>Todas</option>
             <option>XS</option>
             <option>S</option>
@@ -69,353 +124,179 @@
             <option>XL</option>
           </select>
         </div>
-        <!-- Filtro por precio -->
-        <div class="flex-1 min-w-[200px]">
-          <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Precio</label>
-          <select class="w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 cursor-pointer">
+        <div>
+          <label for="precio" class="block text-xs font-semibold uppercase tracking-wider text-stone-500 mb-2">Precio</label>
+          <select id="precio" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-stone-50 text-sm focus:outline-none focus:ring-2 focus:ring-stone-400">
             <option>Todos</option>
-            <option>Menos de €50</option>
-            <option>€50 – €100</option>
-            <option>€100 – €200</option>
-            <option>Más de €200</option>
+            <option>Menos de €100</option>
+            <option>€100 - €250</option>
+            <option>€250 - €500</option>
+            <option>Más de €500</option>
           </select>
         </div>
-        <!-- Botón de ordenar -->
-        <div class="flex items-end">
-          <button class="px-4 py-2 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition cursor-pointer">
-            Filtrar
-          </button>
+        <div class="self-end">
+          <button type="button" class="w-full bg-stone-900 text-white text-sm font-medium py-2.5 px-6 rounded-full hover:bg-stone-700 transition focus:outline-none focus:ring-2 focus:ring-stone-500">Aplicar filtros</button>
         </div>
+      </form>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20" aria-labelledby="catalogo-title">
+      <div class="flex items-end justify-between mb-8">
+        <h2 id="catalogo-title" class="text-2xl sm:text-3xl font-serif">Productos destacados</h2>
+        <p class="text-sm text-stone-500">8 piezas seleccionadas</p>
       </div>
 
-      <!-- GRILLA 4×5 = 20 PRODUCTOS -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-        <!-- 1 - Vestido Floral (Mujer) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="mujer">
-          <img src="assets/img/mujer/vestido floral.jpg" alt="Vestido Floral" class="w-full h-56 object-cover" />
+      <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+        <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <figure class="aspect-[3/4] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?q=80&w=900&auto=format&fit=crop" alt="Vestido floral de mujer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </figure>
           <div class="p-4">
-            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Nuevo</p>
-            <h3 class="text-base font-bold mt-1">Vestido Floral</h3>
-            <p class="text-gray-500 text-xs mt-1">Corte midi, mangas abullonadas.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€89.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
+            <p class="text-xs text-stone-400 uppercase tracking-wider">Mujer</p>
+            <h3 class="font-medium text-sm sm:text-base mt-1">Vestido Floral</h3>
+            <p class="font-semibold text-sm sm:text-base mt-2">€ 190</p>
+            <a href="products.html?id=vestido-floral" class="mt-3 inline-block w-full text-center bg-stone-900 text-white text-sm py-2 rounded-full hover:bg-stone-700 transition">Ver producto</a>
           </div>
-        </div>
+        </article>
 
-        <!-- 2 - Blusa Clásica (Mujer) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="mujer">
-          <img src="assets/img/mujer/blusa clasica.jpg" alt="Blusa Clásica" class="w-full h-56 object-cover" />
+        <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <figure class="aspect-[3/4] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=900&auto=format&fit=crop" alt="Blusa clásica de mujer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </figure>
           <div class="p-4">
-            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Más vendido</p>
-            <h3 class="text-base font-bold mt-1">Blusa Clásica</h3>
-            <p class="text-gray-500 text-xs mt-1">Algodón premium, corte recto.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€59.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
+            <p class="text-xs text-stone-400 uppercase tracking-wider">Mujer</p>
+            <h3 class="font-medium text-sm sm:text-base mt-1">Blusa Clásica</h3>
+            <p class="font-semibold text-sm sm:text-base mt-2">€ 95</p>
+            <a href="products.html?id=blusa-clasica" class="mt-3 inline-block w-full text-center bg-stone-900 text-white text-sm py-2 rounded-full hover:bg-stone-700 transition">Ver producto</a>
           </div>
-        </div>
+        </article>
 
-        <!-- 3 - Falda Plisada (Mujer) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="mujer">
-          <img src="assets/img/mujer/falda plisada.jpg" alt="Falda Plisada" class="w-full h-56 object-cover" />
+        <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <figure class="aspect-[3/4] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=900&auto=format&fit=crop" alt="Camisa oxford para hombre" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </figure>
           <div class="p-4">
-            <h3 class="text-base font-bold">Falda Plisada</h3>
-            <p class="text-gray-500 text-xs mt-1">Pliegues finos, cintura alta.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€69.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
+            <p class="text-xs text-stone-400 uppercase tracking-wider">Hombre</p>
+            <h3 class="font-medium text-sm sm:text-base mt-1">Camisa Oxford</h3>
+            <p class="font-semibold text-sm sm:text-base mt-2">€ 110</p>
+            <a href="products.html?id=camisa-oxford" class="mt-3 inline-block w-full text-center bg-stone-900 text-white text-sm py-2 rounded-full hover:bg-stone-700 transition">Ver producto</a>
           </div>
-        </div>
+        </article>
 
-        <!-- 4 - Chaqueta Trench (Mujer) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="mujer">
-          <img src="assets/img/mujer/Chaqueta Trench.jpg" alt="Chaqueta Trench" class="w-full h-56 object-cover" />
+        <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <figure class="aspect-[3/4] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?q=80&w=900&auto=format&fit=crop" alt="Traje ejecutivo para hombre" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </figure>
           <div class="p-4">
-            <h3 class="text-base font-bold">Chaqueta Trench</h3>
-            <p class="text-gray-500 text-xs mt-1">Gabardina, cinturón incluido.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€129.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
+            <p class="text-xs text-stone-400 uppercase tracking-wider">Hombre</p>
+            <h3 class="font-medium text-sm sm:text-base mt-1">Traje Ejecutivo</h3>
+            <p class="font-semibold text-sm sm:text-base mt-2">€ 420</p>
+            <a href="products.html?id=traje-ejecutivo" class="mt-3 inline-block w-full text-center bg-stone-900 text-white text-sm py-2 rounded-full hover:bg-stone-700 transition">Ver producto</a>
           </div>
-        </div>
+        </article>
 
-        <!-- 5 - Vestido de Noche (Mujer) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="mujer">
-          <img src="assets/img/mujer/Vestido de Noche.jpg" alt="Vestido de Noche" class="w-full h-56 object-cover" />
+        <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <figure class="aspect-[3/4] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=900&auto=format&fit=crop" alt="Bolso tote de cuero" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </figure>
           <div class="p-4">
-            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Nuevo</p>
-            <h3 class="text-base font-bold mt-1">Vestido de Noche</h3>
-            <p class="text-gray-500 text-xs mt-1">Escote palabra de honor, satén.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€149.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
+            <p class="text-xs text-stone-400 uppercase tracking-wider">Accesorios</p>
+            <h3 class="font-medium text-sm sm:text-base mt-1">Bolso Tote</h3>
+            <p class="font-semibold text-sm sm:text-base mt-2">€ 350</p>
+            <a href="products.html?id=bolso-tote" class="mt-3 inline-block w-full text-center bg-stone-900 text-white text-sm py-2 rounded-full hover:bg-stone-700 transition">Ver producto</a>
           </div>
-        </div>
+        </article>
 
-        <!-- 6 - Jeans Rectos (Mujer) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="mujer">
-          <img src="assets/img/mujer/Jeans Rectos.jpg" alt="Jeans Rectos" class="w-full h-56 object-cover" />
+        <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <figure class="aspect-[3/4] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=900&auto=format&fit=crop" alt="Reloj clásico de acero" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </figure>
           <div class="p-4">
-            <h3 class="text-base font-bold">Jeans Rectos</h3>
-            <p class="text-gray-500 text-xs mt-1">Denim elástico, tiro medio.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€79.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
+            <p class="text-xs text-stone-400 uppercase tracking-wider">Accesorios</p>
+            <h3 class="font-medium text-sm sm:text-base mt-1">Reloj Clásico</h3>
+            <p class="font-semibold text-sm sm:text-base mt-2">€ 680</p>
+            <a href="products.html?id=reloj-clasico" class="mt-3 inline-block w-full text-center bg-stone-900 text-white text-sm py-2 rounded-full hover:bg-stone-700 transition">Ver producto</a>
           </div>
-        </div>
+        </article>
 
-        <!-- 7 - Camisa Oxford (Hombre) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="hombre">
-          <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400&h=500&fit=crop" alt="Camisa Oxford" class="w-full h-56 object-cover" />
+        <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <figure class="aspect-[3/4] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=900&auto=format&fit=crop" alt="Gafas de sol con montura metálica" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </figure>
           <div class="p-4">
-            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Nuevo</p>
-            <h3 class="text-base font-bold mt-1">Camisa Oxford</h3>
-            <p class="text-gray-500 text-xs mt-1">Algodón, corte slim, cuello italiano.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€69.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
+            <p class="text-xs text-stone-400 uppercase tracking-wider">Accesorios</p>
+            <h3 class="font-medium text-sm sm:text-base mt-1">Gafas de Sol</h3>
+            <p class="font-semibold text-sm sm:text-base mt-2">€ 145</p>
+            <a href="products.html?id=gafas-sol" class="mt-3 inline-block w-full text-center bg-stone-900 text-white text-sm py-2 rounded-full hover:bg-stone-700 transition">Ver producto</a>
           </div>
-        </div>
+        </article>
 
-        <!-- 8 - Traje Ejecutivo (Hombre) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="hombre">
-          <img src="assets/img/hombre/Traje Ejecutivo.jpg" alt="Traje Ejecutivo" class="w-full h-56 object-cover" />
+        <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <figure class="aspect-[3/4] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?q=80&w=900&auto=format&fit=crop" alt="Pashmina de seda" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </figure>
           <div class="p-4">
-            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Más vendido</p>
-            <h3 class="text-base font-bold mt-1">Traje Ejecutivo</h3>
-            <p class="text-gray-500 text-xs mt-1">Lana virgen, dos piezas, slim.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€299.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
+            <p class="text-xs text-stone-400 uppercase tracking-wider">Accesorios</p>
+            <h3 class="font-medium text-sm sm:text-base mt-1">Pashmina Seda</h3>
+            <p class="font-semibold text-sm sm:text-base mt-2">€ 120</p>
+            <a href="products.html?id=pashmina-seda" class="mt-3 inline-block w-full text-center bg-stone-900 text-white text-sm py-2 rounded-full hover:bg-stone-700 transition">Ver producto</a>
           </div>
-        </div>
-
-        <!-- 9 - Chaqueta de Cuero (Hombre) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="hombre">
-          <img src="assets/img/hombre/Chaqueta de Cuero.jpg" alt="Chaqueta de Cuero" class="w-full h-56 object-cover" />
-          <div class="p-4">
-            <h3 class="text-base font-bold">Chaqueta de Cuero</h3>
-            <p class="text-gray-500 text-xs mt-1">Piel genuina, forro interior.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€199.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
-          </div>
-        </div>
-
-        <!-- 10 - Pantalón Chino (Hombre) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="hombre">
-          <img src="assets/img/hombre/Pantalón Chino.jpg" alt="Pantalón Chino" class="w-full h-56 object-cover" />
-          <div class="p-4">
-            <h3 class="text-base font-bold">Pantalón Chino</h3>
-            <p class="text-gray-500 text-xs mt-1">Algodón, corte regular, beige.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€59.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
-          </div>
-        </div>
-
-        <!-- 11 - Blazer Marino (Hombre) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="hombre">
-          <img src="assets/img/hombre/Blazer Marino.jpg" alt="Blazer Marino" class="w-full h-56 object-cover" />
-          <div class="p-4">
-            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Nuevo</p>
-            <h3 class="text-base font-bold mt-1">Blazer Marino</h3>
-            <p class="text-gray-500 text-xs mt-1">Tejido cruzado, botones dorados.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€159.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
-          </div>
-        </div>
-
-        <!-- 12 - Zapatos Derby (Hombre) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="hombre">
-          <img src="assets/img/hombre/Zapatos Derby.jpg" alt="Zapatos Derby" class="w-full h-56 object-cover" />
-          <div class="p-4">
-            <h3 class="text-base font-bold">Zapatos Derby</h3>
-            <p class="text-gray-500 text-xs mt-1">Cuero, suela de cuero, cordones.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€129.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
-          </div>
-        </div>
-
-        <!-- 13 - Bolso Tote (Accesorios) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="accesorios">
-          <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&h=500&fit=crop" alt="Bolso Tote" class="w-full h-56 object-cover" />
-          <div class="p-4">
-            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Más vendido</p>
-            <h3 class="text-base font-bold mt-1">Bolso Tote</h3>
-            <p class="text-gray-500 text-xs mt-1">Cuero vegano, asa corta y larga.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€89.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
-          </div>
-        </div>
-
-        <!-- 14 - Reloj Clásico (Accesorios) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="accesorios">
-          <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=400&h=500&fit=crop" alt="Reloj Clásico" class="w-full h-56 object-cover" />
-          <div class="p-4">
-            <h3 class="text-base font-bold">Reloj Clásico</h3>
-            <p class="text-gray-500 text-xs mt-1">Acero inoxidable, esfera dorada.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€199.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
-          </div>
-        </div>
-
-        <!-- 15 - Gafas de Sol (Accesorios) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="accesorios">
-          <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=500&fit=crop" alt="Gafas de Sol" class="w-full h-56 object-cover" />
-          <div class="p-4">
-            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Nuevo</p>
-            <h3 class="text-base font-bold mt-1">Gafas de Sol</h3>
-            <p class="text-gray-500 text-xs mt-1">Montura metálica, lentes polarizadas.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€129.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
-          </div>
-        </div>
-
-        <!-- 16 - Tacones Stiletto (Accesorios) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="accesorios">
-          <img src="assets/img/mujer/Tacones Stiletto.jpg" alt="Tacones Stiletto" class="w-full h-56 object-cover" />
-          <div class="p-4">
-            <h3 class="text-base font-bold">Tacones Stiletto</h3>
-            <p class="text-gray-500 text-xs mt-1">Piel, tacón 10cm, punta fina.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€109.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
-          </div>
-        </div>
-
-        <!-- 17 - Cinturón de Cuero (Accesorios) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="accesorios">
-          <img src="assets/img/accesorios/Cinturón de Cuero.jpg" alt="Cinturón de Cuero" class="w-full h-56 object-cover" />
-          <div class="p-4">
-            <h3 class="text-base font-bold">Cinturón de Cuero</h3>
-            <p class="text-gray-500 text-xs mt-1">Piel genuina, hebilla dorada.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€49.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
-          </div>
-        </div>
-
-        <!-- 18 - Cartera Europea (Accesorios) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="accesorios">
-          <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?w=400&h=500&fit=crop" alt="Cartera Europea" class="w-full h-56 object-cover" />
-          <div class="p-4">
-            <h3 class="text-base font-bold">Cartera Europea</h3>
-            <p class="text-gray-500 text-xs mt-1">Cuero, múltiples compartimentos.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€39.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
-          </div>
-        </div>
-
-        <!-- 19 - Mochila Urbana (Nuevo - Accesorios) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="accesorios">
-          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=500&fit=crop" alt="Mochila Urbana" class="w-full h-56 object-cover" />
-          <div class="p-4">
-            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Nuevo</p>
-            <h3 class="text-base font-bold mt-1">Mochila Urbana</h3>
-            <p class="text-gray-500 text-xs mt-1">Lona impermeable, antirrobo.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€79.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
-          </div>
-        </div>
-
-        <!-- 20 - Pashmina Seda (Accesorio) -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="accesorios">
-          <img src="assets/img/accesorios/Pashmina Seda.jpg" alt="Pashmina Seda" class="w-full h-56 object-cover" />
-          <div class="p-4">
-            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Nuevo</p>
-            <h3 class="text-base font-bold mt-1">Pashmina Seda</h3>
-            <p class="text-gray-500 text-xs mt-1">Seda natural, bordados finos.</p>
-            <p class="text-indigo-600 font-bold text-lg mt-2">€45.00</p>
-            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
-              Añadir
-            </button>
-          </div>
-        </div>
-
+        </article>
       </div>
     </section>
 
-    <!-- NEWSLETTER -->
-    <section class="bg-indigo-600 text-white py-12">
-      <div class="max-w-xl mx-auto text-center px-4">
-        <h3 class="text-2xl font-bold mb-2">Únete a nuestra newsletter</h3>
-        <p class="text-indigo-100 mb-6">Recibe un 10% de descuento en tu primera compra.</p>
-        <div class="flex gap-2 max-w-md mx-auto">
-          <input type="email" placeholder="Tu correo electrónico" class="flex-1 px-4 py-3 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none" />
-          <button class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition cursor-pointer">
-            Suscribirse
-          </button>
-        </div>
+    <aside class="bg-stone-800 text-white py-14 sm:py-16">
+      <div class="max-w-2xl mx-auto px-4 sm:px-6 text-center">
+        <h2 class="text-2xl sm:text-3xl font-serif mb-3">Novedades en tu correo</h2>
+        <p class="text-stone-400 text-sm sm:text-base mb-7">Recibe lanzamientos, cápsulas exclusivas y beneficios para clientes Maison Élégance.</p>
+        <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <label for="newsletter-mail" class="sr-only">Correo electrónico</label>
+          <input id="newsletter-mail" type="email" placeholder="Tu correo electrónico" class="flex-1 px-4 py-3 rounded-full border border-stone-600 bg-stone-700 text-white text-sm focus:outline-none focus:ring-2 focus:ring-stone-400 placeholder:text-stone-500" />
+          <button type="submit" class="px-6 py-3 rounded-full bg-white text-stone-900 font-medium text-sm hover:bg-stone-200 transition shadow-md whitespace-nowrap">Suscribirse</button>
+        </form>
       </div>
-    </section>
+    </aside>
+  </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-gray-800 text-gray-300 py-10">
-      <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div>
-          <h4 class="text-white font-bold text-lg mb-3">Maison Élégance</h4>
-          <p class="text-sm">Moda francesa con elegancia y distinción desde 2020.</p>
-        </div>
-        <div>
-          <h4 class="text-white font-semibold mb-3">Categorías</h4>
-          <ul class="text-sm space-y-2">
-            <li><a href="#" class="hover:text-white">Mujer</a></li>
-            <li><a href="#" class="hover:text-white">Hombre</a></li>
-            <li><a href="#" class="hover:text-white">Accesorios</a></li>
-            <li><a href="#" class="hover:text-white">Rebajas</a></li>
+  <footer class="bg-stone-900 text-stone-400 py-12 sm:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <section aria-labelledby="foot-cat">
+          <h2 id="foot-cat" class="text-white text-sm font-medium uppercase tracking-wider mb-4">Categorías</h2>
+          <ul class="space-y-2 text-sm">
+            <li><a href="catalogo.html" class="hover:text-white transition">Mujer</a></li>
+            <li><a href="catalogo.html" class="hover:text-white transition">Hombre</a></li>
+            <li><a href="catalogo.html" class="hover:text-white transition">Accesorios</a></li>
           </ul>
-        </div>
-        <div>
-          <h4 class="text-white font-semibold mb-3">Ayuda</h4>
-          <ul class="text-sm space-y-2">
-            <li><a href="#" class="hover:text-white">Envíos</a></li>
-            <li><a href="#" class="hover:text-white">Devoluciones</a></li>
-            <li><a href="#" class="hover:text-white">Tallas</a></li>
-            <li><a href="#" class="hover:text-white">Contacto</a></li>
+        </section>
+        <section aria-labelledby="foot-legal">
+          <h2 id="foot-legal" class="text-white text-sm font-medium uppercase tracking-wider mb-4">Legal</h2>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition">Términos y condiciones</a></li>
+            <li><a href="#" class="hover:text-white transition">Política de privacidad</a></li>
           </ul>
-        </div>
-        <div>
-          <h4 class="text-white font-semibold mb-3">Síguenos</h4>
-          <div class="flex space-x-4 text-2xl">
-            <span class="cursor-pointer hover:text-white">📷</span>
-            <span class="cursor-pointer hover:text-white">📘</span>
-            <span class="cursor-pointer hover:text-white">🐦</span>
-            <span class="cursor-pointer hover:text-white">📌</span>
-          </div>
-        </div>
+        </section>
+        <address class="not-italic" aria-labelledby="foot-contacto">
+          <h2 id="foot-contacto" class="text-white text-sm font-medium uppercase tracking-wider mb-4">Contacto</h2>
+          <ul class="space-y-2 text-sm">
+            <li><a href="mailto:contact@maisonelegance.com" class="hover:text-white transition">contact@maisonelegance.com</a></li>
+            <li><a href="tel:+33123456789" class="hover:text-white transition">+33 1 23 45 67 89</a></li>
+            <li>10 Rue de la Paix, París</li>
+          </ul>
+        </address>
+        <section aria-labelledby="foot-social">
+          <h2 id="foot-social" class="text-white text-sm font-medium uppercase tracking-wider mb-4">Redes sociales</h2>
+          <ul class="space-y-3 text-sm">
+            <li><a href="https://instagram.com/maisonelegance" class="inline-flex items-center gap-3 hover:text-white transition"><i class="fab fa-instagram text-lg w-5 text-center"></i>Instagram</a></li>
+            <li><a href="https://facebook.com/maisonelegance" class="inline-flex items-center gap-3 hover:text-white transition"><i class="fab fa-facebook-f text-lg w-5 text-center"></i>Facebook</a></li>
+            <li><a href="https://x.com/maisonelegance" class="inline-flex items-center gap-3 hover:text-white transition"><i class="fab fa-x-twitter text-lg w-5 text-center"></i>X</a></li>
+          </ul>
+        </section>
       </div>
-      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
-        <p>&copy; 2026 Maison Élégance. Todos los derechos reservados.</p>
+      <div class="mt-10 pt-6 border-t border-stone-700 text-center text-xs text-stone-600">
+        &copy; 2026 Maison Élégance. Todos los derechos reservados.
       </div>
-    </footer>
-  </body>
+    </div>
+  </footer>
+</body>
 </html>
