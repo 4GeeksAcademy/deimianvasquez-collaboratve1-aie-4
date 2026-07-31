@@ -1,172 +1,303 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Shopping cart prototype for a French clothing brand, with responsive cart details, totals, and checkout summary.">
-  <title>Maison Riviera | Cart</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito | Maison Élégance</title>
+  <meta name="description" content="Revisa tu carrito Maison Élégance con cantidades, subtotal, impuestos y total en una experiencia responsive." />
+  <meta name="keywords" content="carrito compra, checkout, ecommerce moda, resumen pedido" />
+  <meta name="author" content="Maison Élégance" />
+  <meta property="og:title" content="Carrito | Maison Élégance" />
+  <meta property="og:description" content="Resumen de compra con tabla desktop y tarjetas móviles, listo para checkout." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Maison Riviera",
-      "url": "https://example.com",
-      "logo": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=400&q=80",
-      "description": "French clothing brand online store prototype focused on the shopping cart experience."
-    }
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Maison Élégance",
+        "url": "https://maisonelegance.com",
+        "logo": "https://maisonelegance.com/logo.png"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://maisonelegance.com/index.html"},
+          {"@type": "ListItem", "position": 2, "name": "Carrito", "item": "https://maisonelegance.com/cart.html"}
+        ]
+      }
+    ]
+  }
   </script>
 </head>
-<body class="min-h-screen bg-stone-50 text-slate-900">
-  <div class="flex min-h-screen flex-col">
-    <header class="border-b border-slate-200 bg-white/90 backdrop-blur-sm">
-      <div class="mx-auto flex w-full max-w-7xl items-center gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <div>
-          <a href="#" class="inline-flex items-center gap-3">
-            <span class="flex h-11 w-11 items-center justify-center rounded-full bg-[#00C2CB] text-lg font-black text-slate-950">MR</span>
-            <div>
-              <p class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">French Atelier</p>
-              <p class="text-lg font-semibold">Maison Riviera</p>
-            </div>
+<body class="bg-stone-50 text-stone-800 antialiased">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between py-3 gap-2 sm:gap-4">
+        <a href="index.html" class="text-xl sm:text-2xl font-serif tracking-wide text-stone-900 shrink-0" aria-label="Ir al inicio Maison Élégance">
+          Maison<span class="text-stone-500">Élégance</span>
+        </a>
+
+        <nav aria-label="Navegación principal" class="hidden lg:flex items-center gap-5 xl:gap-6 text-sm font-medium uppercase tracking-wider text-stone-600">
+          <a href="index.html" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Inicio</a>
+          <a href="catalogo.html" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Catálogo</a>
+          <a href="cart.html" aria-current="page" class="text-stone-900 border-b-2 border-stone-900 pb-1">Carrito</a>
+        </nav>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a href="catalogo.html" class="hidden sm:inline-flex items-center justify-center w-9 h-9 rounded-full text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition" aria-label="Buscar en catálogo">
+            <i class="fas fa-search text-sm"></i>
+          </a>
+          <a href="cart.html" class="relative inline-flex items-center justify-center w-9 h-9 rounded-full text-stone-900 bg-stone-100 transition" aria-label="Ir al carrito">
+            <i class="fas fa-shopping-bag text-sm"></i>
+            <span id="cart-counter" class="absolute -top-0.5 -right-0.5 bg-stone-800 text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">0</span>
           </a>
         </div>
-        <nav aria-label="Primary" class="hidden flex-1 items-center justify-center md:flex">
-          <ul class="flex items-center gap-8 text-sm font-medium text-slate-600">
-            <li><a href="#" class="transition hover:text-slate-950">New arrivals</a></li>
-            <li><a href="#" class="transition hover:text-slate-950">Tailoring</a></li>
-            <li><a href="#" class="transition hover:text-slate-950">Accessories</a></li>
-            <li><a href="#" class="transition hover:text-slate-950">Journal</a></li>
-          </ul>
-        </nav>
-        <div class="ml-auto flex flex-1 items-center justify-end gap-3">
-          <label for="site-search" class="sr-only">Search the catalog</label>
-          <div class="hidden flex-1 max-w-xs items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 md:flex">
-            <span aria-hidden="true" class="text-slate-400">⌕</span>
-            <input id="site-search" type="search" placeholder="Search pieces" class="w-full border-none bg-transparent text-sm outline-none placeholder:text-slate-400">
-          </div>
-          <button type="button" class="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-300 hover:text-slate-950">Account</button>
-        </div>
       </div>
-    </header>
 
-    <main class="flex-1">
-      <section class="border-b border-slate-200 bg-[linear-gradient(135deg,#FFE38A_0%,#FF9A76_55%,#FF5D8F_100%)]">
-        <div class="mx-auto grid w-full max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8 lg:py-16">
-          <div>
-            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-slate-900/70">Cart overview</p>
-            <h1 class="max-w-2xl text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Review the final pieces before checkout.</h1>
-            <p class="mt-5 max-w-2xl text-base leading-7 text-slate-900/80 sm:text-lg">A full cart layout with live totals, semantic structure, and a mobile-friendly experience tailored to the brand palette.</p>
-          </div>
-          <aside class="self-end rounded-3xl border border-white/40 bg-white/70 p-6 shadow-lg shadow-[#FF5D8F]/10 backdrop-blur">
-            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Delivery note</p>
-            <p class="mt-3 text-2xl font-bold text-slate-950">Free shipping from $250</p>
-            <p class="mt-3 text-sm leading-6 text-slate-700">Your cart updates instantly so the prototype shows how subtotal, tax, and total behave with quantity changes.</p>
-          </aside>
+      <nav aria-label="Navegación móvil" class="flex lg:hidden items-center gap-4 pb-3 text-xs font-medium uppercase tracking-wider text-stone-600 overflow-x-auto">
+        <a href="index.html" class="hover:text-stone-900 transition whitespace-nowrap">Inicio</a>
+        <a href="catalogo.html" class="hover:text-stone-900 transition whitespace-nowrap">Catálogo</a>
+        <a href="cart.html" class="text-stone-900 transition whitespace-nowrap">Carrito</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <section class="mb-8 sm:mb-10">
+      <p class="text-stone-500 uppercase tracking-[0.2em] text-xs sm:text-sm">Paso 4 de compra</p>
+      <h1 class="font-serif text-3xl sm:text-4xl mt-2">Tu carrito</h1>
+      <p class="text-stone-600 mt-3 text-sm sm:text-base">Revisa tus piezas antes de finalizar la compra.</p>
+    </section>
+
+    <div class="grid gap-8 xl:grid-cols-[1.5fr_0.9fr]">
+      <section aria-labelledby="items-title" class="rounded-3xl border border-stone-200 bg-white p-4 sm:p-6 shadow-sm">
+        <div class="flex items-end justify-between pb-5 border-b border-stone-200">
+          <h2 id="items-title" class="font-serif text-2xl">Productos</h2>
+          <p id="cart-count" class="text-sm text-stone-500">0 artículos</p>
         </div>
+
+        <section class="mt-5 md:hidden" aria-label="Carrito móvil">
+          <h3 class="sr-only">Listado móvil de productos en carrito</h3>
+          <div id="cart-items-mobile" class="space-y-4"></div>
+        </section>
+
+        <section class="mt-5 hidden md:block" aria-label="Carrito escritorio">
+          <h3 class="sr-only">Tabla de productos en carrito</h3>
+          <table class="w-full border-separate border-spacing-y-3">
+            <caption class="sr-only">Listado de productos con precio unitario, cantidad y total por línea.</caption>
+            <thead>
+              <tr class="text-left text-xs uppercase tracking-[0.15em] text-stone-500">
+                <th class="px-3 py-2">Producto</th>
+                <th class="px-3 py-2">Precio</th>
+                <th class="px-3 py-2">Cantidad</th>
+                <th class="px-3 py-2 text-right">Total</th>
+              </tr>
+            </thead>
+            <tbody id="cart-items-desktop"></tbody>
+          </table>
+        </section>
       </section>
 
-      <div class="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-        <div class="grid gap-8 xl:grid-cols-[1.65fr_0.95fr]">
-          <section aria-labelledby="cart-heading" class="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm shadow-slate-200/50 sm:p-7">
-            <div class="flex flex-col gap-2 border-b border-slate-200 pb-6 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#00C2CB]">Step 4</p>
-                <h2 id="cart-heading" class="mt-2 text-2xl font-bold tracking-tight text-slate-950">Shopping cart</h2>
-              </div>
-              <p id="cart-count" class="text-sm text-slate-500">0 items</p>
-            </div>
+      <aside aria-labelledby="summary-title" class="h-fit rounded-3xl border border-stone-200 bg-stone-900 text-white p-5 sm:p-6 xl:sticky xl:top-24">
+        <h2 id="summary-title" class="font-serif text-2xl">Resumen del pedido</h2>
+        <p class="text-stone-300 text-sm mt-2">Totales actualizados al instante.</p>
 
-            <section aria-labelledby="mobile-cart-heading" class="mt-6 md:hidden">
-              <h3 id="mobile-cart-heading" class="sr-only">Cart items</h3>
-              <div id="cart-items-mobile" class="space-y-4"></div>
-            </section>
-
-            <section aria-labelledby="desktop-cart-heading" class="mt-6 hidden md:block">
-              <h3 id="desktop-cart-heading" class="sr-only">Cart items table</h3>
-              <table class="w-full table-fixed border-separate border-spacing-y-3" aria-describedby="cart-table-description">
-                <caption id="cart-table-description" class="sr-only">Products currently added to the cart with price, quantity, and per-product totals.</caption>
-                <thead>
-                  <tr class="text-left text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
-                    <th scope="col" class="w-[46%] px-4 pb-2">Product</th>
-                    <th scope="col" class="w-[16%] px-4 pb-2">Unit price</th>
-                    <th scope="col" class="w-[20%] px-4 pb-2">Quantity</th>
-                    <th scope="col" class="w-[18%] px-4 pb-2 text-right">Line total</th>
-                  </tr>
-                </thead>
-                <tbody id="cart-items-desktop"></tbody>
-              </table>
-            </section>
-          </section>
-
-          <aside aria-labelledby="summary-heading" class="h-fit rounded-[2rem] border border-slate-200 bg-slate-950 p-6 text-white shadow-xl shadow-slate-950/10 sm:p-7 xl:sticky xl:top-8">
-            <div class="border-b border-white/10 pb-6">
-              <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#7FE0D4]">Order summary</p>
-              <h2 id="summary-heading" class="mt-2 text-2xl font-bold">Ready to purchase</h2>
-              <p class="mt-3 text-sm leading-6 text-slate-300">Review pricing and continue to the next checkout step from this full-page cart view.</p>
-            </div>
-
-            <dl class="mt-6 space-y-4 text-sm">
-              <div class="flex items-center justify-between gap-4">
-                <dt class="text-slate-300">Subtotal</dt>
-                <dd id="subtotal" class="text-base font-semibold text-white">$0.00</dd>
-              </div>
-              <div class="flex items-center justify-between gap-4">
-                <dt class="text-slate-300">Tax</dt>
-                <dd id="tax" class="text-base font-semibold text-white">$0.00</dd>
-              </div>
-              <div class="flex items-center justify-between gap-4 border-t border-white/10 pt-4">
-                <dt class="text-base font-semibold text-white">Total</dt>
-                <dd id="total" class="text-2xl font-black text-[#FFE38A]">$0.00</dd>
-              </div>
-            </dl>
-
-            <button type="button" class="mt-8 inline-flex w-full items-center justify-center rounded-full bg-[#00C2CB] px-5 py-4 text-sm font-bold uppercase tracking-[0.28em] text-slate-950 transition hover:bg-[#7FE0D4]">Purchase</button>
-
-            <section aria-labelledby="service-heading" class="mt-8 rounded-3xl bg-white/5 p-5">
-              <h3 id="service-heading" class="text-sm font-semibold uppercase tracking-[0.24em] text-[#7FE0D4]">Service promise</h3>
-              <ul class="mt-3 space-y-2 text-sm text-slate-300">
-                <li>Secure card payment in the next checkout step</li>
-                <li>Tailored delivery for France and the EU</li>
-                <li>Returns available within 30 days</li>
-              </ul>
-            </section>
-          </aside>
-        </div>
-      </div>
-    </main>
-
-    <footer class="mt-12 border-t border-slate-200 bg-white">
-      <div class="mx-auto grid w-full max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-3 lg:px-8">
-        <section aria-labelledby="footer-categories">
-          <h2 id="footer-categories" class="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Categories</h2>
-          <ul class="mt-4 space-y-2 text-sm text-slate-700">
-            <li>Footwear</li>
-            <li>Shirts</li>
-            <li>Pants</li>
-            <li>Accessories</li>
-          </ul>
-        </section>
-        <section aria-labelledby="footer-legal">
-          <h2 id="footer-legal" class="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Legal</h2>
-          <ul class="mt-4 space-y-2 text-sm text-slate-700">
-            <li>Terms and conditions</li>
-            <li>Privacy policy</li>
-            <li>About the brand</li>
-          </ul>
-        </section>
-        <address class="not-italic" aria-labelledby="footer-contact">
-          <h2 id="footer-contact" class="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Contact</h2>
-          <div class="mt-4 space-y-2 text-sm text-slate-700">
-            <p>bonjour@maisonriviera.fr</p>
-            <p>+33 1 80 45 21 21</p>
-            <p>14 Rue des Ateliers, Paris</p>
+        <dl class="mt-6 space-y-4 text-sm">
+          <div class="flex items-center justify-between">
+            <dt class="text-stone-300">Subtotal</dt>
+            <dd id="subtotal" class="font-semibold">€ 0.00</dd>
           </div>
-        </address>
-      </div>
-    </footer>
-  </div>
+          <div class="flex items-center justify-between">
+            <dt class="text-stone-300">Impuestos (21%)</dt>
+            <dd id="tax" class="font-semibold">€ 0.00</dd>
+          </div>
+          <div class="flex items-center justify-between border-t border-stone-700 pt-4">
+            <dt class="text-base font-semibold">Total</dt>
+            <dd id="total" class="text-2xl font-bold text-stone-100">€ 0.00</dd>
+          </div>
+        </dl>
 
-  <script src="cart-data.js"></script>
+        <button type="button" class="mt-8 w-full rounded-full bg-white text-stone-900 px-5 py-3 text-sm font-medium uppercase tracking-[0.12em] hover:bg-stone-200 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-300">
+          Finalizar compra
+        </button>
+
+        <section class="mt-7 rounded-2xl bg-white/10 p-4" aria-labelledby="service-title">
+          <h3 id="service-title" class="text-xs uppercase tracking-[0.16em] text-stone-300">Servicio</h3>
+          <ul class="mt-3 space-y-2 text-sm text-stone-200">
+            <li>Pago seguro en el siguiente paso</li>
+            <li>Envíos a Francia y Unión Europea</li>
+            <li>Devoluciones dentro de 30 días</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="bg-stone-900 text-stone-400 py-12 sm:py-16 mt-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <section aria-labelledby="foot-cat">
+          <h2 id="foot-cat" class="text-white text-sm font-medium uppercase tracking-wider mb-4">Categorías</h2>
+          <ul class="space-y-2 text-sm">
+            <li><a href="catalogo.html" class="hover:text-white transition">Mujer</a></li>
+            <li><a href="catalogo.html" class="hover:text-white transition">Hombre</a></li>
+            <li><a href="catalogo.html" class="hover:text-white transition">Accesorios</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="foot-legal">
+          <h2 id="foot-legal" class="text-white text-sm font-medium uppercase tracking-wider mb-4">Legal</h2>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition">Términos y condiciones</a></li>
+            <li><a href="#" class="hover:text-white transition">Política de privacidad</a></li>
+          </ul>
+        </section>
+        <address class="not-italic" aria-labelledby="foot-contacto">
+          <h2 id="foot-contacto" class="text-white text-sm font-medium uppercase tracking-wider mb-4">Contacto</h2>
+          <ul class="space-y-2 text-sm">
+            <li><a href="mailto:contact@maisonelegance.com" class="hover:text-white transition">contact@maisonelegance.com</a></li>
+            <li><a href="tel:+33123456789" class="hover:text-white transition">+33 1 23 45 67 89</a></li>
+            <li>10 Rue de la Paix, París</li>
+          </ul>
+        </address>
+        <section aria-labelledby="foot-social">
+          <h2 id="foot-social" class="text-white text-sm font-medium uppercase tracking-wider mb-4">Redes sociales</h2>
+          <ul class="space-y-3 text-sm">
+            <li><a href="https://instagram.com/maisonelegance" class="inline-flex items-center gap-3 hover:text-white transition"><i class="fab fa-instagram text-lg w-5 text-center"></i>Instagram</a></li>
+            <li><a href="https://facebook.com/maisonelegance" class="inline-flex items-center gap-3 hover:text-white transition"><i class="fab fa-facebook-f text-lg w-5 text-center"></i>Facebook</a></li>
+            <li><a href="https://x.com/maisonelegance" class="inline-flex items-center gap-3 hover:text-white transition"><i class="fab fa-x-twitter text-lg w-5 text-center"></i>X</a></li>
+          </ul>
+        </section>
+      </div>
+      <div class="mt-10 pt-6 border-t border-stone-700 text-center text-xs text-stone-600">
+        &copy; 2026 Maison Élégance. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const cartItems = [
+      {
+        id: 1,
+        name: "Abrigo Cashmere",
+        category: "Mujer",
+        price: 420,
+        quantity: 1,
+        image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=736&auto=format&fit=crop"
+      },
+      {
+        id: 2,
+        name: "Blazer Lino",
+        category: "Hombre",
+        price: 280,
+        quantity: 1,
+        image: "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?q=80&w=880&auto=format&fit=crop"
+      }
+    ];
+
+    const countEl = document.getElementById("cart-count");
+    const counterEl = document.getElementById("cart-counter");
+    const subtotalEl = document.getElementById("subtotal");
+    const taxEl = document.getElementById("tax");
+    const totalEl = document.getElementById("total");
+    const mobileList = document.getElementById("cart-items-mobile");
+    const desktopList = document.getElementById("cart-items-desktop");
+
+    function currency(value) {
+      return new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" }).format(value);
+    }
+
+    function updateTotals() {
+      const itemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+      const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+      const tax = subtotal * 0.21;
+      const total = subtotal + tax;
+
+      countEl.textContent = `${itemCount} artículo${itemCount === 1 ? "" : "s"}`;
+      counterEl.textContent = String(itemCount);
+      subtotalEl.textContent = currency(subtotal);
+      taxEl.textContent = currency(tax);
+      totalEl.textContent = currency(total);
+    }
+
+    function changeQuantity(id, delta) {
+      const item = cartItems.find((product) => product.id === id);
+      if (!item) return;
+      item.quantity = Math.max(1, item.quantity + delta);
+      renderCart();
+    }
+
+    function renderMobile(items) {
+      mobileList.innerHTML = items.map((item) => `
+        <article class="rounded-2xl border border-stone-200 p-4 bg-stone-50">
+          <div class="flex gap-3">
+            <img src="${item.image}" alt="${item.name}" class="w-20 h-24 rounded-xl object-cover" loading="lazy" />
+            <div class="flex-1">
+              <p class="text-xs uppercase tracking-wide text-stone-500">${item.category}</p>
+              <h4 class="font-medium text-sm mt-1">${item.name}</h4>
+              <p class="mt-2 text-sm font-semibold">${currency(item.price)}</p>
+            </div>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="inline-flex items-center rounded-full border border-stone-300">
+              <button type="button" class="px-3 py-1 text-stone-700" aria-label="Restar una unidad" data-action="minus" data-id="${item.id}">-</button>
+              <span class="px-3 text-sm">${item.quantity}</span>
+              <button type="button" class="px-3 py-1 text-stone-700" aria-label="Sumar una unidad" data-action="plus" data-id="${item.id}">+</button>
+            </div>
+            <p class="font-semibold text-sm">${currency(item.price * item.quantity)}</p>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function renderDesktop(items) {
+      desktopList.innerHTML = items.map((item) => `
+        <tr class="bg-stone-50">
+          <td class="rounded-l-2xl px-3 py-3">
+            <div class="flex items-center gap-3">
+              <img src="${item.image}" alt="${item.name}" class="w-14 h-16 rounded-lg object-cover" loading="lazy" />
+              <div>
+                <p class="text-xs uppercase tracking-wide text-stone-500">${item.category}</p>
+                <p class="font-medium text-sm">${item.name}</p>
+              </div>
+            </div>
+          </td>
+          <td class="px-3 py-3 text-sm">${currency(item.price)}</td>
+          <td class="px-3 py-3">
+            <div class="inline-flex items-center rounded-full border border-stone-300">
+              <button type="button" class="px-3 py-1 text-stone-700" aria-label="Restar una unidad" data-action="minus" data-id="${item.id}">-</button>
+              <span class="px-3 text-sm">${item.quantity}</span>
+              <button type="button" class="px-3 py-1 text-stone-700" aria-label="Sumar una unidad" data-action="plus" data-id="${item.id}">+</button>
+            </div>
+          </td>
+          <td class="rounded-r-2xl px-3 py-3 text-right font-semibold text-sm">${currency(item.price * item.quantity)}</td>
+        </tr>
+      `).join("");
+    }
+
+    function bindActions() {
+      document.querySelectorAll("button[data-action]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const id = Number(button.dataset.id);
+          const action = button.dataset.action;
+          changeQuantity(id, action === "plus" ? 1 : -1);
+        });
+      });
+    }
+
+    function renderCart() {
+      renderMobile(cartItems);
+      renderDesktop(cartItems);
+      updateTotals();
+      bindActions();
+    }
+
+    renderCart();
+  </script>
 </body>
 </html>
