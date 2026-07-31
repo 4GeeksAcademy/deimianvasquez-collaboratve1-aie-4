@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Maison Élégance — Tienda online de ropa francesa de alta gama. Descubre nuestra colección moderna y atemporal. Moda femenina, masculina y accesorios." />
+  <meta name="keywords" content="ropa francesa, moda francesa, tienda de ropa online, Maison Élégance, ropa mujer, ropa hombre, accesorios, colección otoño invierno, moda atemporal" />
+  <meta name="author" content="Maison Élégance" />
+  <title>Maison Élégance — Moda Francesa de Alta Gama | Tienda Online</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>👗</text></svg>" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Maison Élégance",
+    "url": "https://maisonelegance.com",
+    "logo": "https://maisonelegance.com/logo.png",
+    "description": "Tienda online de ropa francesa de alta gama. Moda femenina, masculina y accesorios.",
+    "foundingDate": "1987",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+33-1-23-45-67-89",
+      "contactType": "customer service",
+      "email": "contact@maisonelegance.com"
+    },
+    "sameAs": [
+      "https://instagram.com/maisonelegance",
+      "https://facebook.com/maisonelegance",
+      "https://x.com/maisonelegance"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "10 Rue de la Paix",
+      "addressLocality": "París",
+      "addressCountry": "FR"
+    }
+  }
+  </script>
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased">
+
+  <!-- ===== HEADER ===== -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Single row: Logo | Nav | Search (dropdown) | Account + Cart -->
+      <div class="flex items-center justify-between py-3 gap-2 sm:gap-4">
+
+        <!-- Logo -->
+        <a href="#" class="text-xl sm:text-2xl font-serif tracking-wide text-stone-900 shrink-0">
+          Maison<span class="text-stone-500">Élégance</span>
+        </a>
+
+        <!-- ===== NAV (desktop) ===== -->
+        <nav class="hidden lg:flex items-center gap-5 xl:gap-6 text-sm font-medium uppercase tracking-wider text-stone-600">
+          <a href="#" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Novedades</a>
+          <a href="#" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Mujer</a>
+          <a href="#" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Hombre</a>
+          <a href="#" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Accesorios</a>
+          <a href="#" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Colección</a>
+          <a href="#" class="hover:text-stone-900 transition border-b-2 border-transparent hover:border-stone-900 pb-1">Rebajas</a>
+        </nav>
+
+        <!-- Right side: Search dropdown + Account + Cart -->
+        <div class="flex items-center gap-2 sm:gap-3">
+
+          <!-- Search dropdown -->
+          <div class="relative group">
+            <!-- Search icon (always visible) -->
+            <button class="flex items-center justify-center w-9 h-9 rounded-full text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition">
+              <i class="fas fa-search text-sm"></i>
+            </button>
+            <!-- Dropdown input (appears on hover / focus-within) -->
+            <div class="absolute right-0 top-full mt-2 w-64 bg-white rounded-xl shadow-lg border border-stone-200 p-2
+                        opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                        focus-within:opacity-100 focus-within:visible transition-all duration-200">
+              <input type="search" placeholder="Buscar…"
+                     class="w-full px-4 py-2 rounded-lg border border-stone-300 bg-stone-50 text-sm
+                            focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent
+                            placeholder:text-stone-400" />
+            </div>
+          </div>
+
+          <!-- Account -->
+          <a href="#" class="hidden sm:inline-flex items-center justify-center w-9 h-9 rounded-full text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition">
+            <i class="far fa-user text-sm"></i>
+          </a>
+
+          <!-- Cart -->
+          <a href="#" class="relative inline-flex items-center justify-center w-9 h-9 rounded-full text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition">
+            <i class="fas fa-shopping-bag text-sm"></i>
+            <span class="absolute -top-0.5 -right-0.5 bg-stone-800 text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">0</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- ===== NAV (mobile) ===== -->
+      <nav class="flex lg:hidden items-center gap-4 pb-3 text-xs font-medium uppercase tracking-wider text-stone-600 overflow-x-auto">
+        <a href="#" class="hover:text-stone-900 transition whitespace-nowrap">Novedades</a>
+        <a href="#" class="hover:text-stone-900 transition whitespace-nowrap">Mujer</a>
+        <a href="#" class="hover:text-stone-900 transition whitespace-nowrap">Hombre</a>
+        <a href="#" class="hover:text-stone-900 transition whitespace-nowrap">Accesorios</a>
+        <a href="#" class="hover:text-stone-900 transition whitespace-nowrap">Colección</a>
+        <a href="#" class="hover:text-stone-900 transition whitespace-nowrap">Rebajas</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="relative bg-stone-900 text-white overflow-hidden min-h-[70vh] flex items-center">
+      <!-- Background image -->
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center bg-no-repeat"></div>
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-r from-stone-900/85 via-stone-900/70 to-stone-900/50"></div>
+      <!-- Content -->
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36 w-full">
+        <div class="max-w-2xl">
+          <p class="text-stone-300 uppercase tracking-[0.2em] text-sm mb-4">Colección Otoño-Invierno 2026</p>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif leading-tight mb-6">
+            La Elegancia<br />
+            <span class="text-stone-200">Atemporal</span>
+          </h1>
+          <p class="text-stone-300 text-base sm:text-lg mb-8 leading-relaxed">
+            Descubre nuestra nueva colección donde el savoir-faire francés se encuentra
+            con el diseño contemporáneo. Piezas únicas para un guardarropa moderno.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#" class="inline-block bg-white text-stone-900 px-8 py-3 rounded-full font-medium text-sm
+                              hover:bg-stone-200 transition shadow-md">Comprar ahora</a>
+            <a href="#" class="inline-block border border-stone-400 text-stone-200 px-8 py-3 rounded-full font-medium text-sm
+                              hover:bg-white hover:text-stone-900 transition">Ver colección</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CATEGORIES ===== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <h2 class="text-2xl sm:text-3xl font-serif text-center mb-12">Categorías</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+
+        <article class="relative group rounded-2xl overflow-hidden shadow-md bg-stone-200 aspect-[3/4]">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-900/70 to-transparent z-10"></div>
+          <div class="absolute bottom-0 left-0 right-0 z-20 p-4 sm:p-6">
+            <h3 class="text-white text-lg sm:text-xl font-serif">Mujer</h3>
+            <p class="text-stone-300 text-sm mt-1">Ver colección →</p>
+          </div>
+        </article>
+
+        <article class="relative group rounded-2xl overflow-hidden shadow-md bg-stone-300 aspect-[3/4]">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-900/70 to-transparent z-10"></div>
+          <div class="absolute bottom-0 left-0 right-0 z-20 p-4 sm:p-6">
+            <h3 class="text-white text-lg sm:text-xl font-serif">Hombre</h3>
+            <p class="text-stone-300 text-sm mt-1">Ver colección →</p>
+          </div>
+        </article>
+
+        <article class="relative group rounded-2xl overflow-hidden shadow-md bg-stone-400 aspect-[3/4]">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-900/70 to-transparent z-10"></div>
+          <div class="absolute bottom-0 left-0 right-0 z-20 p-4 sm:p-6">
+            <h3 class="text-white text-lg sm:text-xl font-serif">Accesorios</h3>
+            <p class="text-stone-300 text-sm mt-1">Ver colección →</p>
+          </div>
+        </article>
+
+        <article class="relative group rounded-2xl overflow-hidden shadow-md bg-stone-500 aspect-[3/4]">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-900/70 to-transparent z-10"></div>
+          <div class="absolute bottom-0 left-0 right-0 z-20 p-4 sm:p-6">
+            <h3 class="text-white text-lg sm:text-xl font-serif">Rebajas</h3>
+            <p class="text-stone-300 text-sm mt-1">Hasta −50 % →</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== NUEVOS LANZAMIENTOS ===== -->
+    <section class="bg-white py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between mb-10">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-serif">Nuevos lanzamientos</h2>
+            <p class="text-stone-500 text-sm mt-1">Lo último de la temporada</p>
+          </div>
+          <a href="#" class="hidden sm:inline-block text-sm font-medium text-stone-700 hover:text-stone-900 border-b border-stone-400 hover:border-stone-900 transition">Ver todo →</a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+
+          <!-- Product 1 -->
+          <article class="group bg-stone-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div class="aspect-[3/4] overflow-hidden">
+              <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=736&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-500"></div>
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-stone-400 uppercase tracking-wider">Mujer</p>
+              <h3 class="font-medium text-sm sm:text-base mt-1">Abrigo Cashmere</h3>
+              <p class="font-semibold text-sm sm:text-base mt-2">€ 420</p>
+              <a href="#" class="mt-3 inline-block w-full text-center bg-stone-900 text-white text-sm py-2 rounded-full
+                              hover:bg-stone-700 transition">Añadir al carrito</a>
+            </div>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="group bg-stone-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div class="aspect-[3/4] overflow-hidden">
+              <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?q=80&w=880&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-500"></div>
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-stone-400 uppercase tracking-wider">Hombre</p>
+              <h3 class="font-medium text-sm sm:text-base mt-1">Blazer Lino</h3>
+              <p class="font-semibold text-sm sm:text-base mt-2">€ 280</p>
+              <a href="#" class="mt-3 inline-block w-full text-center bg-stone-900 text-white text-sm py-2 rounded-full
+                              hover:bg-stone-700 transition">Añadir al carrito</a>
+            </div>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="group bg-stone-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div class="aspect-[3/4] overflow-hidden">
+              <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?q=80&w=871&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-500"></div>
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-stone-400 uppercase tracking-wider">Accesorios</p>
+              <h3 class="font-medium text-sm sm:text-base mt-1">Bolso de Cuero</h3>
+              <p class="font-semibold text-sm sm:text-base mt-2">€ 350</p>
+              <a href="#" class="mt-3 inline-block w-full text-center bg-stone-900 text-white text-sm py-2 rounded-full
+                              hover:bg-stone-700 transition">Añadir al carrito</a>
+            </div>
+          </article>
+
+          <!-- Product 4 -->
+          <article class="group bg-stone-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div class="aspect-[3/4] overflow-hidden">
+              <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?q=80&w=880&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-500"></div>
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-stone-400 uppercase tracking-wider">Accesorios</p>
+              <h3 class="font-medium text-sm sm:text-base mt-1">Bufanda de Seda</h3>
+              <p class="font-semibold text-sm sm:text-base mt-2">€ 120</p>
+              <a href="#" class="mt-3 inline-block w-full text-center bg-stone-900 text-white text-sm py-2 rounded-full
+                              hover:bg-stone-700 transition">Añadir al carrito</a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="sm:hidden mt-6 text-center">
+          <a href="#" class="inline-block text-sm font-medium text-stone-700 border-b border-stone-400">Ver todo →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MÁS VENDIDOS ===== -->
+    <section class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between mb-10">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-serif">Más vendidos</h2>
+            <p class="text-stone-500 text-sm mt-1">Los favoritos de nuestra comunidad</p>
+          </div>
+          <a href="#" class="hidden sm:inline-block text-sm font-medium text-stone-700 hover:text-stone-900 border-b border-stone-400 hover:border-stone-900 transition">Ver todo →</a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+
+          <!-- Product 1 -->
+          <article class="group bg-stone-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div class="aspect-[3/4] overflow-hidden">
+              <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1539008835657-9e8e9680c956?q=80&w=1887&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-500"></div>
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-stone-400 uppercase tracking-wider">Mujer</p>
+              <h3 class="font-medium text-sm sm:text-base mt-1">Vestido Floral</h3>
+              <p class="font-semibold text-sm sm:text-base mt-2">€ 190</p>
+              <a href="#" class="mt-3 inline-block w-full text-center bg-stone-900 text-white text-sm py-2 rounded-full
+                              hover:bg-stone-700 transition">Añadir al carrito</a>
+            </div>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="group bg-stone-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div class="aspect-[3/4] overflow-hidden">
+              <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=880&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-500"></div>
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-stone-400 uppercase tracking-wider">Hombre</p>
+              <h3 class="font-medium text-sm sm:text-base mt-1">Chaqueta Cuero</h3>
+              <p class="font-semibold text-sm sm:text-base mt-2">€ 520</p>
+              <a href="#" class="mt-3 inline-block w-full text-center bg-stone-900 text-white text-sm py-2 rounded-full
+                              hover:bg-stone-700 transition">Añadir al carrito</a>
+            </div>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="group bg-stone-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div class="aspect-[3/4] overflow-hidden">
+              <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=1099&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-500"></div>
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-stone-400 uppercase tracking-wider">Accesorios</p>
+              <h3 class="font-medium text-sm sm:text-base mt-1">Reloj Clásico</h3>
+              <p class="font-semibold text-sm sm:text-base mt-2">€ 680</p>
+              <a href="#" class="mt-3 inline-block w-full text-center bg-stone-900 text-white text-sm py-2 rounded-full
+                              hover:bg-stone-700 transition">Añadir al carrito</a>
+            </div>
+          </article>
+
+          <!-- Product 4 -->
+          <article class="group bg-stone-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div class="aspect-[3/4] overflow-hidden">
+              <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=870&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-500"></div>
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-stone-400 uppercase tracking-wider">Calzado</p>
+              <h3 class="font-medium text-sm sm:text-base mt-1">Botines Cuero</h3>
+              <p class="font-semibold text-sm sm:text-base mt-2">€ 310</p>
+              <a href="#" class="mt-3 inline-block w-full text-center bg-stone-900 text-white text-sm py-2 rounded-full
+                              hover:bg-stone-700 transition">Añadir al carrito</a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="sm:hidden mt-6 text-center">
+          <a href="#" class="inline-block text-sm font-medium text-stone-700 border-b border-stone-400">Ver todo →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NEWSLETTER (ASIDE) ===== -->
+    <aside class="bg-stone-800 text-white py-16 sm:py-20">
+      <div class="max-w-2xl mx-auto px-4 sm:px-6 text-center">
+        <h2 class="text-2xl sm:text-3xl font-serif mb-3">Mantente Inspirado</h2>
+        <p class="text-stone-400 text-sm sm:text-base mb-8">
+          Suscríbete a nuestro boletín y recibe en primicia nuestras nuevas colecciones.
+        </p>
+        <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <input type="email" placeholder="Tu correo electrónico"
+                 class="flex-1 px-4 py-3 rounded-full border border-stone-600 bg-stone-700 text-white text-sm
+                        focus:outline-none focus:ring-2 focus:ring-stone-400 placeholder:text-stone-500" />
+          <button type="submit"
+                  class="px-6 py-3 rounded-full bg-white text-stone-900 font-medium text-sm
+                         hover:bg-stone-200 transition shadow-md whitespace-nowrap">
+            Suscribirse
+          </button>
+        </form>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-stone-900 text-stone-400 py-12 sm:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+
+        <!-- Categorías -->
+        <div>
+          <h4 class="text-white text-sm font-medium uppercase tracking-wider mb-4">Categorías</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition">Calzado</a></li>
+            <li><a href="#" class="hover:text-white transition">Camisas</a></li>
+            <li><a href="#" class="hover:text-white transition">Pantalones</a></li>
+            <li><a href="#" class="hover:text-white transition">Accesorios</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div>
+          <h4 class="text-white text-sm font-medium uppercase tracking-wider mb-4">Legal</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition">Términos y condiciones</a></li>
+            <li><a href="#" class="hover:text-white transition">Política de privacidad</a></li>
+            <li><a href="#" class="hover:text-white transition">Sobre la marca</a></li>
+          </ul>
+        </div>
+
+        <!-- Contacto -->
+        <div>
+          <h4 class="text-white text-sm font-medium uppercase tracking-wider mb-4">Contacto</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition">Email</a></li>
+            <li><a href="#" class="hover:text-white transition">Teléfono</a></li>
+            <li><a href="#" class="hover:text-white transition">Dirección</a></li>
+          </ul>
+        </div>
+
+        <!-- Redes sociales -->
+        <div>
+          <h4 class="text-white text-sm font-medium uppercase tracking-wider mb-4">Redes sociales</h4>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <a href="#" class="inline-flex items-center gap-3 hover:text-white transition">
+                <i class="fab fa-instagram text-lg w-5 text-center"></i>
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="#" class="inline-flex items-center gap-3 hover:text-white transition">
+                <i class="fab fa-facebook-f text-lg w-5 text-center"></i>
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="#" class="inline-flex items-center gap-3 hover:text-white transition">
+                <i class="fab fa-x-twitter text-lg w-5 text-center"></i>
+                X
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="mt-10 pt-6 border-t border-stone-700 text-center text-xs text-stone-600">
+        &copy; 2026 Maison Élégance. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
