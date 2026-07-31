@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo - Maison Élégance</title>
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- HEADER -->
+    <header class="bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <h1 class="text-2xl font-bold text-gray-800 tracking-wide">Maison <span class="text-indigo-600">Élégance</span></h1>
+        <nav class="hidden md:flex space-x-6 text-sm font-medium">
+          <a href="#" class="text-gray-600 hover:text-indigo-600">Mujer</a>
+          <a href="#" class="text-gray-600 hover:text-indigo-600">Hombre</a>
+          <a href="#" class="text-gray-600 hover:text-indigo-600">Accesorios</a>
+          <a href="#" class="text-gray-600 hover:text-indigo-600">Rebajas</a>
+        </nav>
+        <div class="flex items-center space-x-4 text-gray-600">
+          <span class="cursor-pointer hover:text-indigo-600">🔍</span>
+          <span class="cursor-pointer hover:text-indigo-600">👤</span>
+          <span class="cursor-pointer hover:text-indigo-600">🛒</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center py-20 px-4">
+      <div class="relative z-10">
+        <h2 class="text-4xl md:text-5xl font-bold mb-3 tracking-wide">Nouvelle Collection</h2>
+        <p class="text-lg text-gray-300 max-w-xl mx-auto mb-6">
+          Descubre nuestra nueva colección de moda francesa. Elegancia y estilo para cada ocasión.
+        </p>
+        <a href="#" class="inline-block bg-white text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition">
+          Explorar colección
+        </a>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO UNIFICADO -->
+    <section class="max-w-7xl mx-auto px-4 py-12">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-gray-800">🛍️ Catálogo</h2>
+      </div>
+
+      <!-- BARRA DE FILTROS -->
+      <div class="flex flex-wrap gap-4 mb-8 p-4 bg-white rounded-xl shadow-sm border border-gray-200">
+        <!-- Filtro por categoría -->
+        <div class="flex-1 min-w-[200px]">
+          <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Categoría</label>
+          <select class="w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 cursor-pointer">
+            <option>Todas</option>
+            <option>Mujer</option>
+            <option>Hombre</option>
+            <option>Accesorios</option>
+          </select>
+        </div>
+        <!-- Filtro por talla -->
+        <div class="flex-1 min-w-[200px]">
+          <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Talla</label>
+          <select class="w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 cursor-pointer">
+            <option>Todas</option>
+            <option>XS</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+          </select>
+        </div>
+        <!-- Filtro por precio -->
+        <div class="flex-1 min-w-[200px]">
+          <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Precio</label>
+          <select class="w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 cursor-pointer">
+            <option>Todos</option>
+            <option>Menos de €50</option>
+            <option>€50 – €100</option>
+            <option>€100 – €200</option>
+            <option>Más de €200</option>
+          </select>
+        </div>
+        <!-- Botón de ordenar -->
+        <div class="flex items-end">
+          <button class="px-4 py-2 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition cursor-pointer">
+            Filtrar
+          </button>
+        </div>
+      </div>
+
+      <!-- GRILLA 4×5 = 20 PRODUCTOS -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- 1 - Vestido Floral (Mujer) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="mujer">
+          <img src="assets/img/mujer/vestido floral.jpg" alt="Vestido Floral" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Nuevo</p>
+            <h3 class="text-base font-bold mt-1">Vestido Floral</h3>
+            <p class="text-gray-500 text-xs mt-1">Corte midi, mangas abullonadas.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€89.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+        <!-- 2 - Blusa Clásica (Mujer) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="mujer">
+          <img src="assets/img/mujer/blusa clasica.jpg" alt="Blusa Clásica" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Más vendido</p>
+            <h3 class="text-base font-bold mt-1">Blusa Clásica</h3>
+            <p class="text-gray-500 text-xs mt-1">Algodón premium, corte recto.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€59.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+        <!-- 3 - Falda Plisada (Mujer) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="mujer">
+          <img src="assets/img/mujer/falda plisada.jpg" alt="Falda Plisada" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <h3 class="text-base font-bold">Falda Plisada</h3>
+            <p class="text-gray-500 text-xs mt-1">Pliegues finos, cintura alta.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€69.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 - Chaqueta Trench (Mujer) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="mujer">
+          <img src="assets/img/mujer/Chaqueta Trench.jpg" alt="Chaqueta Trench" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <h3 class="text-base font-bold">Chaqueta Trench</h3>
+            <p class="text-gray-500 text-xs mt-1">Gabardina, cinturón incluido.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€129.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+        <!-- 5 - Vestido de Noche (Mujer) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="mujer">
+          <img src="assets/img/mujer/Vestido de Noche.jpg" alt="Vestido de Noche" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Nuevo</p>
+            <h3 class="text-base font-bold mt-1">Vestido de Noche</h3>
+            <p class="text-gray-500 text-xs mt-1">Escote palabra de honor, satén.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€149.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+        <!-- 6 - Jeans Rectos (Mujer) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="mujer">
+          <img src="assets/img/mujer/Jeans Rectos.jpg" alt="Jeans Rectos" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <h3 class="text-base font-bold">Jeans Rectos</h3>
+            <p class="text-gray-500 text-xs mt-1">Denim elástico, tiro medio.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€79.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+        <!-- 7 - Camisa Oxford (Hombre) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="hombre">
+          <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400&h=500&fit=crop" alt="Camisa Oxford" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Nuevo</p>
+            <h3 class="text-base font-bold mt-1">Camisa Oxford</h3>
+            <p class="text-gray-500 text-xs mt-1">Algodón, corte slim, cuello italiano.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€69.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+        <!-- 8 - Traje Ejecutivo (Hombre) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="hombre">
+          <img src="assets/img/hombre/Traje Ejecutivo.jpg" alt="Traje Ejecutivo" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Más vendido</p>
+            <h3 class="text-base font-bold mt-1">Traje Ejecutivo</h3>
+            <p class="text-gray-500 text-xs mt-1">Lana virgen, dos piezas, slim.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€299.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+        <!-- 9 - Chaqueta de Cuero (Hombre) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="hombre">
+          <img src="assets/img/hombre/Chaqueta de Cuero.jpg" alt="Chaqueta de Cuero" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <h3 class="text-base font-bold">Chaqueta de Cuero</h3>
+            <p class="text-gray-500 text-xs mt-1">Piel genuina, forro interior.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€199.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+        <!-- 10 - Pantalón Chino (Hombre) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="hombre">
+          <img src="assets/img/hombre/Pantalón Chino.jpg" alt="Pantalón Chino" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <h3 class="text-base font-bold">Pantalón Chino</h3>
+            <p class="text-gray-500 text-xs mt-1">Algodón, corte regular, beige.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€59.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+        <!-- 11 - Blazer Marino (Hombre) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="hombre">
+          <img src="assets/img/hombre/Blazer Marino.jpg" alt="Blazer Marino" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Nuevo</p>
+            <h3 class="text-base font-bold mt-1">Blazer Marino</h3>
+            <p class="text-gray-500 text-xs mt-1">Tejido cruzado, botones dorados.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€159.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+        <!-- 12 - Zapatos Derby (Hombre) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="hombre">
+          <img src="assets/img/hombre/Zapatos Derby.jpg" alt="Zapatos Derby" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <h3 class="text-base font-bold">Zapatos Derby</h3>
+            <p class="text-gray-500 text-xs mt-1">Cuero, suela de cuero, cordones.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€129.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+        <!-- 13 - Bolso Tote (Accesorios) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="accesorios">
+          <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&h=500&fit=crop" alt="Bolso Tote" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Más vendido</p>
+            <h3 class="text-base font-bold mt-1">Bolso Tote</h3>
+            <p class="text-gray-500 text-xs mt-1">Cuero vegano, asa corta y larga.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€89.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+        <!-- 14 - Reloj Clásico (Accesorios) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="accesorios">
+          <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=400&h=500&fit=crop" alt="Reloj Clásico" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <h3 class="text-base font-bold">Reloj Clásico</h3>
+            <p class="text-gray-500 text-xs mt-1">Acero inoxidable, esfera dorada.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€199.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+        <!-- 15 - Gafas de Sol (Accesorios) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="accesorios">
+          <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=500&fit=crop" alt="Gafas de Sol" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Nuevo</p>
+            <h3 class="text-base font-bold mt-1">Gafas de Sol</h3>
+            <p class="text-gray-500 text-xs mt-1">Montura metálica, lentes polarizadas.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€129.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+        <!-- 16 - Tacones Stiletto (Accesorios) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="accesorios">
+          <img src="assets/img/mujer/Tacones Stiletto.jpg" alt="Tacones Stiletto" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <h3 class="text-base font-bold">Tacones Stiletto</h3>
+            <p class="text-gray-500 text-xs mt-1">Piel, tacón 10cm, punta fina.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€109.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+        <!-- 17 - Cinturón de Cuero (Accesorios) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="accesorios">
+          <img src="assets/img/accesorios/Cinturón de Cuero.jpg" alt="Cinturón de Cuero" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <h3 class="text-base font-bold">Cinturón de Cuero</h3>
+            <p class="text-gray-500 text-xs mt-1">Piel genuina, hebilla dorada.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€49.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+        <!-- 18 - Cartera Europea (Accesorios) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="accesorios">
+          <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?w=400&h=500&fit=crop" alt="Cartera Europea" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <h3 class="text-base font-bold">Cartera Europea</h3>
+            <p class="text-gray-500 text-xs mt-1">Cuero, múltiples compartimentos.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€39.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+        <!-- 19 - Mochila Urbana (Nuevo - Accesorios) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="accesorios">
+          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=500&fit=crop" alt="Mochila Urbana" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Nuevo</p>
+            <h3 class="text-base font-bold mt-1">Mochila Urbana</h3>
+            <p class="text-gray-500 text-xs mt-1">Lona impermeable, antirrobo.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€79.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+        <!-- 20 - Pashmina Seda (Accesorio) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-categoria="accesorios">
+          <img src="assets/img/accesorios/Pashmina Seda.jpg" alt="Pashmina Seda" class="w-full h-56 object-cover" />
+          <div class="p-4">
+            <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Nuevo</p>
+            <h3 class="text-base font-bold mt-1">Pashmina Seda</h3>
+            <p class="text-gray-500 text-xs mt-1">Seda natural, bordados finos.</p>
+            <p class="text-indigo-600 font-bold text-lg mt-2">€45.00</p>
+            <button class="mt-3 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm cursor-pointer">
+              Añadir
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="bg-indigo-600 text-white py-12">
+      <div class="max-w-xl mx-auto text-center px-4">
+        <h3 class="text-2xl font-bold mb-2">Únete a nuestra newsletter</h3>
+        <p class="text-indigo-100 mb-6">Recibe un 10% de descuento en tu primera compra.</p>
+        <div class="flex gap-2 max-w-md mx-auto">
+          <input type="email" placeholder="Tu correo electrónico" class="flex-1 px-4 py-3 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none" />
+          <button class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition cursor-pointer">
+            Suscribirse
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-gray-300 py-10">
+      <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h4 class="text-white font-bold text-lg mb-3">Maison Élégance</h4>
+          <p class="text-sm">Moda francesa con elegancia y distinción desde 2020.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3">Categorías</h4>
+          <ul class="text-sm space-y-2">
+            <li><a href="#" class="hover:text-white">Mujer</a></li>
+            <li><a href="#" class="hover:text-white">Hombre</a></li>
+            <li><a href="#" class="hover:text-white">Accesorios</a></li>
+            <li><a href="#" class="hover:text-white">Rebajas</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3">Ayuda</h4>
+          <ul class="text-sm space-y-2">
+            <li><a href="#" class="hover:text-white">Envíos</a></li>
+            <li><a href="#" class="hover:text-white">Devoluciones</a></li>
+            <li><a href="#" class="hover:text-white">Tallas</a></li>
+            <li><a href="#" class="hover:text-white">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3">Síguenos</h4>
+          <div class="flex space-x-4 text-2xl">
+            <span class="cursor-pointer hover:text-white">📷</span>
+            <span class="cursor-pointer hover:text-white">📘</span>
+            <span class="cursor-pointer hover:text-white">🐦</span>
+            <span class="cursor-pointer hover:text-white">📌</span>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+        <p>&copy; 2026 Maison Élégance. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>
