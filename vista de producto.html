@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vista de Producto | Chaqueta de Lino Atlas</title>
+    <meta
+      name="description"
+      content="Vista de producto responsive con imagen, tallas, precio, boton de compra y acordeones de materiales y uso recomendado."
+    />
+    <meta
+      name="keywords"
+      content="vista de producto, ecommerce, tailwind, responsive, moda"
+    />
+    <meta name="author" content="4Geeks Student" />
+    <meta property="og:title" content="Vista de Producto | Chaqueta de Lino Atlas" />
+    <meta
+      property="og:description"
+      content="Explora tallas, precio y detalles de materiales en una vista de producto optimizada para mobile first."
+    />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+        --font-serif: "Fraunces", ui-serif, Georgia, serif;
+
+        --color-cream: #f5f0e8;
+        --color-ink: #1d2b32;
+        --color-ink-soft: #415764;
+        --color-accent: #d75a31;
+        --color-accent-strong: #b9441f;
+        --color-mint: #c6ddd2;
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen bg-[radial-gradient(circle_at_top_right,_#dfece6_0%,_#f7f2ea_35%,_#f2ebde_100%)] font-sans text-ink antialiased">
+    <header class="mx-auto max-w-7xl px-4 pt-8 md:px-8">
+      <p class="inline-block rounded-full bg-mint/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-ink-soft">
+        Nueva temporada
+      </p>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 pb-10 pt-6 md:px-8 md:pt-10" aria-labelledby="product-title">
+      <article class="space-y-5 md:space-y-7">
+        <section class="flex flex-col gap-5 md:flex-col md:gap-8 lg:gap-10">
+          <section class="w-full" aria-label="Imagen de producto">
+            <figure class="relative overflow-hidden rounded-3xl border border-ink/10 bg-cream shadow-[0_18px_45px_rgba(41,56,66,0.16)]">
+              <div class="pointer-events-none absolute right-0 top-0 h-16 w-16 rounded-bl-[2rem] bg-accent/20 md:h-20 md:w-20 md:rounded-bl-[2.5rem]"></div>
+              <img
+                src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80"
+                alt="Vista frontal de chaqueta de lino Atlas color arena"
+                class="h-48 w-full object-cover md:h-[32rem]"
+                loading="lazy"
+              />
+            </figure>
+          </section>
+
+          <section class="w-full flex flex-col gap-5" aria-label="Caracteristicas del producto">
+            <header class="space-y-2">
+              <h1 id="product-title" class="max-h-[4.2em] overflow-hidden font-serif text-2xl leading-[1.4] md:max-h-[8.4em] md:text-4xl lg:max-h-[4.2em]">
+                Chaqueta de Lino Atlas Corte Relajado
+              </h1>
+              <h2 class="text-sm font-medium uppercase tracking-[0.14em] text-ink-soft">
+                Codigo de producto: A7C3D
+              </h2>
+            </header>
+
+            <section aria-label="Seleccion de talla" class="space-y-2">
+              <h3 class="text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">Talla</h3>
+              <div class="flex flex-row flex-wrap gap-2 text-sm">
+                <span class="rounded-full border border-ink px-3 py-1.5">CH</span>
+                <span class="rounded-full border border-ink px-3 py-1.5">M</span>
+                <span class="rounded-full border border-ink/40 border-dashed px-3 py-1.5 opacity-55" aria-disabled="true">XL</span>
+              </div>
+            </section>
+
+            <section aria-label="Precio" class="space-y-1">
+              <h3 class="text-sm font-semibold uppercase tracking-[0.14em] text-ink-soft">Precio</h3>
+              <p class="font-serif text-3xl leading-none text-accent md:text-4xl lg:text-5xl">$2499 MXN</p>
+            </section>
+          </section>
+        </section>
+
+        <button
+          type="button"
+          class="w-full rounded-2xl bg-accent px-5 py-3 text-sm font-bold uppercase tracking-[0.15em] text-white transition hover:bg-accent-strong focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent/30"
+          aria-label="Agregar producto al carrito"
+        >
+          Agregar al carrito
+        </button>
+
+        <section aria-label="Descripcion del producto" class="space-y-3">
+          <h3 class="text-sm font-semibold uppercase tracking-[0.14em] text-ink-soft">Descripcion de producto</h3>
+          <p class="text-sm leading-relaxed text-ink-soft md:text-base">
+            Silueta minimalista para clima templado con botonadura mate y terminacion suave. Pieza ligera diseñada para combinar estructura, comodidad y una caida limpia en movimiento.
+          </p>
+
+          <details class="group rounded-2xl border border-ink/15 bg-white/70 p-4">
+            <summary class="cursor-pointer list-none text-sm font-semibold">
+              Materiales de producto
+              <span class="float-right text-lg leading-none transition group-open:rotate-45">+</span>
+            </summary>
+            <p class="pt-3 text-sm text-ink-soft">
+              88% lino europeo, 12% algodon peinado. Forro interno ligero con acabado respirable para mantener estructura sin perder frescura.
+            </p>
+          </details>
+
+          <details class="group rounded-2xl border border-ink/15 bg-white/70 p-4">
+            <summary class="cursor-pointer list-none text-sm font-semibold">
+              Uso recomendado
+              <span class="float-right text-lg leading-none transition group-open:rotate-45">+</span>
+            </summary>
+            <p class="pt-3 text-sm text-ink-soft">
+              Ideal para oficina casual, viajes cortos o eventos de tarde. Combina con camiseta basica y pantalon recto para un look limpio.
+            </p>
+          </details>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
